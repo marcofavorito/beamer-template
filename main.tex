@@ -33,6 +33,9 @@
 }
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title and author information
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Information to be included in the title page:
 \title{Quaerendo Invenietis}
 \author{
@@ -47,7 +50,16 @@
 \date{June 2020}
 
 
-\beamertemplatenavigationsymbolsempty
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% custom macros/scripts
+\input{scripts/beamer-options.tex}
+\input{scripts/macros.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
 \frame{\titlepage}
@@ -65,6 +77,10 @@
 
 \textquote{While working on this fugure, in which the name \textit{BACH} appears
 in the countersubject, the author died.}
+
+\begin{definition}
+This is a definition.
+\end{definition}
 
 \end{frame}
 
