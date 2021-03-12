@@ -6,13 +6,12 @@
 \usepackage{hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage[small]{caption}
+\usepackage[citestyle=authoryear,bibstyle=authortitle,natbib=true]{biblatex}
 \usepackage{csquotes}
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{booktabs}
-\usepackage{algorithm}
-\usepackage{algorithmic}
 \usepackage{latexsym}
 \usepackage{amsthm}
 \usepackage{thmtools}
@@ -23,14 +22,47 @@
 \usepackage{amssymb}
 \usepackage{stmaryrd}
 \usepackage{amsmath}
+\usepackage{mathtools}
 \usepackage{nameref}
 \usepackage{tikz}
+\usepackage{relsize}
 \usetikzlibrary{automata, positioning, arrows}
 \tikzset{->,
     >=stealth,
     node distance=3cm,
     every state/.style={thick, fill=gray!10}
 }
+
+\usepackage[inline]{enumitem}
+\newlist{romanenumerate*}{enumerate*}{1}
+\setlist[romanenumerate*]{label=(\textit{\roman*})}
+\newlist{romanenumerate}{enumerate}{1}
+\setlist[romanenumerate]{label=(\textit{\roman*})}
+
+
+\addbibresource{bibliography.bib}
+% citation style
+\renewcommand\nameyeardelim{, }
+\let\cite\citep
+\let\shortcite\citeyearpar
+
+% Packages and setup for theorem environments
+%\declaretheorem[name=Theorem]{theorem}
+%\declaretheorem[name=Lemma,sibling=theorem]{lemma}
+\declaretheorem[name=Proposition,sibling=theorem]{proposition}
+\declaretheorem[name=Claim,sibling=theorem]{claim}
+\declaretheorem[name=Claim,numbered=no]{claim*}
+%\declaretheorem[name=Corollary,sibling=theorem]{corollary}
+%\declaretheorem[name=Definition,sibling=theorem]{definition}
+%\declaretheorem[name=Example,sibling=theorem]{example}
+
+% algorithms
+\usepackage[noend]{algpseudocode}
+\usepackage{algorithm,algorithmicx}
+
+\newcommand*\Let[2]{\State #1 $\gets$ #2}
+\algrenewcommand\algorithmicrequire{\textbf{Precondition:}}
+\algrenewcommand\algorithmicensure{\textbf{Postcondition:}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -41,13 +73,13 @@
 \author{
     Marco Favorito\\
     \href{mailto:favorito@diag.uniroma1.it}{\texttt{favorito@diag.uniroma1.it}}\\
-    \href{https://marcofavorito.github.io}{\texttt{https://marcofavorito.github.io}}
+    \href{https://marcofavorito.me}{\texttt{https://marcofavorito.me}}
 }
 \institute{
     Department of Computer, Control and 
     Management Engineering\\
     Sapienza University of Rome}
-\date{June 2020}
+\date{}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -84,7 +116,6 @@ This is a definition.
 
 \end{frame}
 
-\bibliographystyle{unsrt}
-\bibliography{bibliography}
+\printbibliography
 
 \end{document}
