@@ -33,11 +33,11 @@
     every state/.style={thick, fill=gray!10}
 }
 
-\usepackage[inline]{enumitem}
-\newlist{romanenumerate*}{enumerate*}{1}
-\setlist[romanenumerate*]{label=(\textit{\roman*})}
-\newlist{romanenumerate}{enumerate}{1}
-\setlist[romanenumerate]{label=(\textit{\roman*})}
+%\usepackage[inline]{enumitem}  
+%\newlist{romanenumerate*}{enumerate*}{1}
+%\setlist[romanenumerate*]{label=(\textit{\roman*})}
+%\newlist{romanenumerate}{enumerate}{1}
+%\setlist[romanenumerate]{label=(\textit{\roman*})}
 
 
 \addbibresource{bibliography.bib}
@@ -65,20 +65,42 @@
 \algrenewcommand\algorithmicensure{\textbf{Postcondition:}}
 
 
+\setbeamercolor{author in head/foot}{fg=black}     
+\setbeamercolor{institute in head/foot}{fg=black}  
+\setbeamercolor{title in head/foot}{fg=black} 
+\setbeamercolor{date in head/foot}{fg=black} 
+
+\defbeamertemplate*{footline}{infolines theme}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor~(\insertshortinstitute)
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Title and author information
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Information to be included in the title page:
-\title{Quaerendo Invenietis}
-\author{
-    Marco Favorito\\
-    \href{mailto:favorito@diag.uniroma1.it}{\texttt{favorito@diag.uniroma1.it}}\\
-    \href{https://marcofavorito.me}{\texttt{https://marcofavorito.me}}
+\title[Quaerendo Invenietis]{Quaerendo Invenietis}
+\author[M. Favorito]{Marco Favorito\\
+  \href{mailto:favorito@diag.uniroma1.it}{\texttt{favorito@diag.uniroma1.it}}\\
+  \href{https://marcofavorito.me}{\texttt{https://marcofavorito.me}}
 }
-\institute{
+\institute[Sapienza Univ.]{\small
     Department of Computer, Control and 
     Management Engineering\\
     Sapienza University of Rome}
+
 \date{}
 
 
@@ -94,7 +116,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-\frame{\titlepage}
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
 
 \begin{frame}
 
